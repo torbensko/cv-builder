@@ -1,0 +1,138 @@
+
+@pageWidth: 21cm;
+@pageHeight: 27.9cm;
+@marginVert: 1.5cm;
+@marginHor: 1cm;
+
+* {
+	padding: 0;
+	margin: 0;
+}
+body, table {
+	font-family: "Helvetica Neue";
+	font-weight: lighter;
+	font-size: 10pt;
+}
+
+p {
+	position:relative;
+}
+
+.page {
+	page-break-after: always;
+	padding: 1.5cm 1cm;
+}
+
+.page-content {
+	position: relative;
+	padding: 0 0 0 20px;
+	min-height: 24.8cm; /* fraction smaller than page height */
+}
+
+@media screen {
+	.page {
+		border: 1px dashed #ddd;
+		margin: 10px auto;
+		width: 19cm; /* 21cm - side-padding */
+		height: 24.9cm; /* 27.9 - top-padding */
+		overflow: hidden;
+		background-color: #eee;
+	}
+
+	.page-content {
+		background: white;
+		/*height: 100%;*/
+	}
+}
+
+.page-content .image {
+	position: absolute;
+	left: -130px;
+	top: 0;
+	width: 120px;
+	height: 100%;
+	padding-right: 10px;
+	border-right: 1px solid #666;
+}
+.page-content .image img {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+/* cater for the images */
+.page:first-child .page-content {
+	margin: 0 0 0 130px;
+}
+
+
+h1 {
+	border-bottom: 1px solid #666;
+	margin-bottom: 10px;
+	font-size: 220%;
+	margin-left: -20px;
+	padding: 30px 0px 5px 20px;
+	font-weight: normal;
+}
+
+ul.address {
+	width: 100%;
+	position: relative;
+	margin: 20px 0 20px 0;
+	padding: 0px;
+	list-style: none;
+}
+ul.address li {
+	padding:0px;
+	margin:0px;
+}
+/* contact details */
+ul.address ul {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	text-align: right;
+	list-style: none;
+}
+ul.address i {
+	font-size: 90%;
+}
+
+
+
+/* opening blurb */
+.page-content > p {
+	margin-bottom: 1em;
+}
+
+h2 {
+	padding: 30px 0 5px 0;
+	font-size: 120%;
+	font-weight: normal;
+}
+
+ul.accolade {
+	list-style: none;
+}
+
+/* list of each accolade */
+ul.accolade li {
+	padding: 6px 0px 6px 10px;
+	position: relative;
+}
+
+ul.accolade li .year {
+	position: absolute;
+	right: 0px;
+	top: 5px;
+}
+
+/* the details of each accolade */
+ul.accolade li ul {
+	font-size: 80%;
+	margin: 2px 70px 2px 20px; /* space for the year */
+}
+
+ul.accolade li ul li {
+	padding:0px;
+	margin:0px;
+}
